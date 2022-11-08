@@ -7,7 +7,7 @@ import SocalLogin from '../../SocalLogin/SocalLogin';
 
 const SignUp = () => {
 
-    const { user,createUser} = useContext(AuthContext);
+    const { createUser} = useContext(AuthContext);
 
     const handleSubmit = event => {
         event.preventDefault();
