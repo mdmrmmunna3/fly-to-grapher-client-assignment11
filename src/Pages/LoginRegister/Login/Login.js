@@ -1,16 +1,35 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import logImg from '../../../assets/LoginRegister/login_img.jpg'
+import { AuthContext } from '../../../Contexts/AuthProvider/AuthProvider';
 import './Login.css';
 
 const Login = () => {
+
+    const { userLogin } = useContext(AuthContext);
+
+    const handleSubmit = event => {
+        event.preventDefault();
+        const form = event.target;
+        const email = form.email.value;
+        const password = form.password.value;
+        console.log(email, password);
+
+        userLogin(email, password)
+            .then(result => {
+                const user = result.user;
+                console.log(user);
+            })
+            .catch(err => console.error(err));
+    }
+
     return (
         <div className=" main-div my-4">
             <div className="hero-content flex-col lg:flex-row">
 
                 <img className='w-2/4' src={logImg} alt="" />
 
-                <form className="card flex-shrink-0 w-full max-w-sm shadow-2xl form-div">
+                <form onSubmit={handleSubmit} className="card flex-shrink-0 w-full max-w-sm shadow-2xl form-div">
                     <h1 className="text-5xl font-bold text-center text-white mt-4">Login now!</h1>
                     <div className="card-body">
                         <div className="form-control">
