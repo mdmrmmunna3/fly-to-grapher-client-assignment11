@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, Link as NavLink } from 'react-router-dom';
 import logo from '../../../assets/logo/photography.png';
 import { AuthContext } from '../../../Contexts/AuthProvider/AuthProvider';
 import './Navbar.css';
@@ -17,22 +17,24 @@ const Navbar = () => {
 
     const menuItems = <>
 
-        <li className='font-semibold'><Link to='/'>Home</Link></li>
+        <li className='font-semibold text-sky-500'>
+            <NavLink to='/home'>Home</NavLink>
+            </li>
 
-        <li className='font-semibold'><Link to='/'>Blog</Link></li>
+        <li className='font-semibold text-sky-500'><NavLink to='/'>Blog</NavLink></li>
         {
             user?.email ?
                 <>
-                    <li className='font-semibold'><Link to=''>My Review</Link></li>
-                    <li className='font-semibold'><Link to=''>Add Service</Link></li>
-                    <li className='font-semibold'>
+                    <li className='font-semibold text-sky-500'><NavLink to=''>My Review</NavLink></li>
+                    <li className='font-semibold text-sky-500'><NavLink to=''>Add Service</NavLink></li>
+                    <li className='font-semibold text-sky-500'>
                         <button onClick={handleLogOut} className='btn-ghost'>Log Out</button>
                     </li>
                 </>
                 :
                 <>
-                    <li className='font-semibold'><Link to='/login'>Login</Link></li>
-                    <li className='font-semibold'><Link to='/signup'>Sign Up</Link></li>
+                    <li className='font-semibold text-sky-500'><NavLink to='/login'>Login</NavLink></li>
+                    <li className='font-semibold text-sky-500'><NavLink to='/signup'>Sign Up</NavLink></li>
                 </>
         }
     </>
@@ -47,7 +49,7 @@ const Navbar = () => {
                         {menuItems}
                     </ul>
                 </div>
-                <Link className=" normal-case text-xl">
+                <Link to='/' className=" normal-case text-xl">
                     <div className='flex items-center'>
                         <div>
                             <img className='h-16' src={logo} alt="" />

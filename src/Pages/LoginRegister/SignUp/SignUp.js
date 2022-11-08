@@ -2,6 +2,7 @@ import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import logImg from '../../../assets/LoginRegister/signup_img.jpg'
 import { AuthContext } from '../../../Contexts/AuthProvider/AuthProvider';
+import SocalLogin from '../../SocalLogin/SocalLogin';
 
 
 const SignUp = () => {
@@ -61,6 +62,8 @@ const SignUp = () => {
 
                         </div>
                         <div className="form-control mt-6">
+                            <SocalLogin></SocalLogin>
+                            <br />
                             <input className='btn btn-primary' type="submit" value="Sign Up" />
                         </div>
                     </div>
