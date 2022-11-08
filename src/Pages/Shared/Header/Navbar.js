@@ -5,8 +5,11 @@ import './Navbar.css';
 
 const Navbar = () => {
     const menuItems = <>
+        {
+
+        }
         <li className='font-semibold'><Link to='/'>Home</Link></li>
-        <li className='font-semibold'><Link to='/'>Home</Link></li>
+        <li className='font-semibold'><Link to='/login'>LogIn</Link></li>
         <li className='font-semibold'><Link to='/'>Home</Link></li>
         <li className='font-semibold'><Link to='/'>Home</Link></li>
         <li className='font-semibold'><Link to='/'>Home</Link></li>
