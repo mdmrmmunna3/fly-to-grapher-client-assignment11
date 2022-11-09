@@ -13,9 +13,11 @@ import './LatestNews.css';
 
 const LatestNews = () => {
     return (
-        <div className='my-20 text-center'>
-            <h1 className='text-5xl mb-4 text-white'>Latest News</h1>
-            <h3 className='text-white'>Latest Update for  Sport </h3>
+        <div className='my-16 text-center'>
+            <div className='news-title'>
+                <h1 className='text-2xl md:text-3xl lg:text-5xl mb-4 text-white'>Latest News</h1>
+                <h3 className='text-white'>Latest Update for  Sport </h3>
+            </div>
             <>
                 <Swiper
                     effect={"coverflow"}
