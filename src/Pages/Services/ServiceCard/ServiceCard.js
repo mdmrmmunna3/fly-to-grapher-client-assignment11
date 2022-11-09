@@ -18,7 +18,7 @@ const ServiceCard = ({ service }) => {
                         <p className='text-orange-400 font-bold'>Discount: {discount}%</p>
                     </div>
                     <div className="px-2">
-                    <button className="btn btn-outline btn-primary border-0 text-white">See All <FaArrowRight ></FaArrowRight></button>
+                        <button className="btn btn-outline btn-primary border-0 text-white">View Details <FaArrowRight ></FaArrowRight></button>
                     </div>
                 </div>
             </div>
