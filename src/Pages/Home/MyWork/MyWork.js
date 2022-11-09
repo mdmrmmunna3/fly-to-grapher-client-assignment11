@@ -14,45 +14,45 @@ const MyWork = () => {
     return (
         <div className='pb-12'>
             <div className='work-title'>
-                <h1 className='text-white text-5xl text-center'>My Work</h1>
+                <h1 className='text-white text-5xl text-center mt-10 mb-8 hover:text-slate-400'>My Work</h1>
             </div>
 
             {/* img part  */}
-            <div className="grid sm:grid-cols-2 lg:grid-cols-3  gap-y-8 gap-x-4 img-container">
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-10 img-container ">
                 <div className="transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110  duration-300">
-                    <img className='rounded-lg' src={newsImg1} alt="" />
+                    <img className='rounded-lg w-full' src={newsImg1} alt="" />
                 </div>
 
                 <div className="transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110  duration-300">
-                    <img className='rounded-lg' src={newsImg2} alt="" />
+                    <img className='rounded-lg w-full' src={newsImg2} alt="" />
                 </div>
 
                 <div className="transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110  duration-300">
-                    <img className='rounded-lg' src={newsImg3} alt="" />
+                    <img className='rounded-lg w-full' src={newsImg3} alt="" />
                 </div>
 
                 <div className="transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110  duration-300">
-                    <img className='rounded-lg' src={newsImg4} alt="" />
+                    <img className='rounded-lg w-full' src={newsImg4} alt="" />
                 </div>
 
                 <div className="transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110  duration-300">
-                    <img className='rounded-lg' src={newsImg5} alt="" />
+                    <img className='rounded-lg w-full' src={newsImg5} alt="" />
                 </div>
 
                 <div className="transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110  duration-300">
-                    <img className='rounded-lg' src={newsImg6} alt="" />
+                    <img className='rounded-lg w-full' src={newsImg6} alt="" />
                 </div>
 
                 <div className="transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110  duration-300">
-                    <img className='rounded-lg' src={newsImg7} alt="" />
+                    <img className='rounded-lg w-full' src={newsImg7} alt="" />
                 </div>
 
                 <div className="transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110  duration-300">
-                    <img className='rounded-lg' src={newsImg8} alt="" />
+                    <img className='rounded-lg w-full' src={newsImg8} alt="" />
                 </div>
 
                 <div className="transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110  duration-300">
-                    <img className='rounded-lg' src={newsImg9} alt="" />
+                    <img className='rounded-lg w-full' src={newsImg9} alt="" />
                 </div>
 
             </div>
