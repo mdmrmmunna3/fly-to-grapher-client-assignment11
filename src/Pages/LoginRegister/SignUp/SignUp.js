@@ -8,11 +8,13 @@ import { Helmet } from 'react-helmet-async';
 
 const SignUp = () => {
 
-    const { createUser } = useContext(AuthContext);
+    const { createUser, updateUserProfile } = useContext(AuthContext);
 
     const handleSubmit = event => {
         event.preventDefault();
         const form = event.target;
+        const name = form.name.value;
+        const photoURL = form.photoURL.value;
         const email = form.email.value;
         const password = form.password.value;
         console.log(email, password);
@@ -21,8 +23,21 @@ const SignUp = () => {
             .then(result => {
                 const user = result.user;
                 console.log(user);
+                form.reset();
+                handleUpdateUserProfile(name, photoURL);
             })
             .catch(err => console.error(err));
+    }
+
+    // updateProfile by name and photourl
+    const handleUpdateUserProfile = (name, photoURL) => {
+        const profile = {
+            displayName: name,
+            photoURL: photoURL
+        }
+        updateUserProfile(profile)
+            .then(() => { })
+            .catch(error => console.error('error', error));
     }
 
     return (
@@ -42,14 +57,14 @@ const SignUp = () => {
                                 <label className="label">
                                     <span className="label-text text-white">Name</span>
                                 </label>
-                                <input name='name' type="text" placeholder="name" className="input input-bordered" />
+                                <input name='name' type="text" placeholder="name" className="input input-bordered" required />
                             </div>
 
                             <div className="form-control">
                                 <label className="label">
                                     <span className="label-text text-white">photoURL</span>
                                 </label>
-                                <input name='photoURL' type="text" placeholder="photoURL" className="input input-bordered" />
+                                <input name='photoURL' type="text" placeholder="photoURL" className="input input-bordered" required />
                             </div>
 
                             <div className="form-control">

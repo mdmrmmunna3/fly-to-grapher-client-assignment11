@@ -9,6 +9,7 @@ import SignUp from '../../Pages/LoginRegister/SignUp/SignUp';
 import MyReview from '../../Pages/MyReview/MyReview';
 import ServiceDetails from '../../Pages/Services/ServiceDetails/ServiceDetails';
 import ServicesAll from '../../Pages/Services/ServicesAll/ServicesAll';
+import ShowReview from '../../Pages/Services/ShowReview/ShowReview';
 import PrivateRoute from '../PrivateRoute/PrivateRoute';
 
 const router = createBrowserRouter([
@@ -53,6 +54,10 @@ const router = createBrowserRouter([
           path:'/blog',
           element: <Blog></Blog>
         },
+        // {
+        //   path: 'showreview',
+        //   element: <PrivateRoute><ShowReview></ShowReview></PrivateRoute>,
+        // }
       ]
     }
   ])

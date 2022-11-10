@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
 import { useLoaderData } from 'react-router-dom';
 import { AuthContext } from '../../../Contexts/AuthProvider/AuthProvider';
+import ShowReview from '../ShowReview/ShowReview';
 import './ServiceDetails.css';
 
 const ServiceDetails = () => {
@@ -62,6 +63,10 @@ const ServiceDetails = () => {
                 </div>
             </div>
 
+            {/* show review  */}
+            {/* <ShowReview></ShowReview> */}
+
+            {/* review submit part  */}
             <div className='my-10 mx-10 bg-slate-400 rounded-lg'>
                 <h2 className='text-center text-4xl mb-4 text-white'>Review</h2>
                 <form onSubmit={handleReview}>

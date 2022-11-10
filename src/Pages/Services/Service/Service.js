@@ -17,17 +17,20 @@ const Service = () => {
 
     return (
         <div>
-            <h1 className='text-5xl text-white service-title text-center my-6 hover:text-slate-400'>My Service</h1>
-            <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mx-14'>
-                {
-                    services.map(service => <ServiceCard
-                        key={service._id}
-                        service={service}
-                    ></ServiceCard>)
-                }
-            </div>
-            <div className='text-center mt-4'>
-                <Link to='/serviceall'> <button className="btn btn-outline btn-primary border-0 text-white">See All <FaArrowRight></FaArrowRight></button></Link>
+            
+            <div>
+                <h1 className='text-5xl text-white service-title text-center my-6 hover:text-slate-400'>My Service</h1>
+                <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mx-14'>
+                    {
+                        services.map(service => <ServiceCard
+                            key={service._id}
+                            service={service}
+                        ></ServiceCard>)
+                    }
+                </div>
+                <div className='text-center mt-4'>
+                    <Link to='/serviceall'> <button className="btn btn-outline btn-primary border-0 text-white">See All <FaArrowRight></FaArrowRight></button></Link>
+                </div>
             </div>
         </div>
     );
