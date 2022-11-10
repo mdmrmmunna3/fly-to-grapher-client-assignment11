@@ -44,7 +44,7 @@ const AddService = () => {
 
             <div className='w-3/4 mx-auto p-5 bg-sky-400 m-10 rounded-lg text-center'>
                 <form onSubmit={addService} >
-                    <h1 className='text-3xl'>Add Service</h1>
+                    <h1 className='text-3xl work-title'>Add Service</h1>
                     <input name='name' type="text" placeholder="service-name" className="input input-bordered input-info w-full max-w-xs" required />
                     <input name='img' type="text" placeholder="service-Imgurl " className="m-1 input input-bordered input-info w-full max-w-xs" required />
                     <br />
@@ -63,61 +63,3 @@ const AddService = () => {
 
 export default AddService;
 
-
-// import React from 'react';
-
-// const Addserves = () => {
-
-//     const Addservis = event => {
-//         event.preventDefault();
-//         const form = event.target
-//         const name = form.name.value
-//         const img = form.img.value
-//         const discount = form.discount.value
-//         const price = form.price.value
-//         const description = form.description.value
-
-//         const allData = {
-//             name,
-//             img,
-//             discount,
-//             price,
-//             description
-//         }
-//         console.log(allData)
-//         fetch('http://localhost:5000/allprodect', {
-//             method: 'POST',
-//             headers: {
-//                 'content-type': 'application/json'
-//             },
-//             body: JSON.stringify(allData)
-//         })
-//             .then(res => res.json())
-//             .then(data => {
-//                 console.log(data)
-//                 if (data.acknowledged) {
-//                     form.reset()
-//                     alert('new data add ')
-//                 }
-//             })
-//             .catch(error => console.error(error))
-//     }
-//     return (
-//         <div className='w-3/4 m-auto p-5 '>
-//             <form onSubmit={Addservis} >
-//                 <input name='name' type="text" placeholder="Prodect Taitel" className="input input-bordered input-info w-full max-w-xs" />
-//                 <input name='img' type="text" placeholder="Img Url " className="m-1 input input-bordered input-info w-full max-w-xs" />
-//                 <br />
-//                 <input name='price' type="number" placeholder="Price" className="m-1 input input-bordered input-info w-full max-w-xs" />
-//                 <input name='discount' type="number" placeholder="discount" className="m-1 input input-bordered input-info w-full max-w-xs" />
-//                 <br />
-//                 <textarea name='description' className="textarea textarea-error m-1 w-3/4" placeholder="description"></textarea>
-//                 <br />
-//                 <button type='submit' className="btn btn-wide">Submit</button>
-//             </form>
-
-//         </div>
-//     );
-// };
-
-// export default Addserves;

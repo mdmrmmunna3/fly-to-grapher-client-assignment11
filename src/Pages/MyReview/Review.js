@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import { AuthContext } from '../../Contexts/AuthProvider/AuthProvider';
 
-const Review = ({ review }) => {
+const Review = ({ review, handleDelete }) => {
     const { user } = useContext(AuthContext)
     const { serviceImg, reviewMessage, price, _id, email } = review;
     return (
@@ -21,8 +21,9 @@ const Review = ({ review }) => {
                     <div className="flex items-center justify-between">
                         <p>Message:{reviewMessage}</p>
                     </div>
-                    <div className="flex items-center space-x-3">
-                        <button type="button" className="px-8 py-3 font-semibold rounded-full bg-green-400">Update</button>
+                    <p className='text-primary my-2'>price: ${price}</p>
+                    <div className="flex justify-between space-x-3">
+                        <button onClick={()=> handleDelete(_id)} type="button" className="px-8 py-3 font-semibold rounded-full bg-green-400">Delete</button>
                         <button type="button" className="px-8 py-3 font-semibold rounded-full bg-green-400">Edit Review</button>
                         
                     </div>

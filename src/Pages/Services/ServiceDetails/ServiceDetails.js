@@ -25,7 +25,7 @@ const ServiceDetails = () => {
             serviceImg: img,
         }
 
-        fetch(`http://localhost:5000/servicesAll`, {
+        fetch('http://localhost:5000/reviewAll', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',
@@ -64,14 +64,15 @@ const ServiceDetails = () => {
             </div>
 
             {/* show review  */}
-            {/* <ShowReview></ShowReview> */}
+            <ShowReview></ShowReview>
 
             {/* review submit part  */}
             <div className='my-10 mx-10 bg-slate-400 rounded-lg'>
                 <h2 className='text-center text-4xl mb-4 text-white'>Review</h2>
                 <form onSubmit={handleReview}>
                     <div className='md:flex justify-around sm:text-center '>
-                        <input type="text" placeholder="name" className="input input-bordered input-primary w-full max-w-xs" />
+                        <input type="text" placeholder="name" className="input input-bordered input-primary w-full max-w-xs" defaultValue={user?.displayName} />
+                        <input type="text" placeholder="name" className="input input-bordered input-primary w-full max-w-xs" defaultValue={name} />
                         <input type="email" placeholder="email" className="input input-bordered input-primary w-full max-w-xs" defaultValue={user?.email} readOnly />
                     </div>
                     <textarea name='reviewMessage' className="textarea textarea-primary mt-3 w-full" placeholder="review"></textarea>
