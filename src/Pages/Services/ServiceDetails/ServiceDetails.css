@@ -1,0 +1,11 @@
+
+.service-details-img {
+    width: 100%;
+    height: 550px;
+}
+
+@media only screen and (max-width: 576px) {
+    .service-details-img {
+        height: 300px;
+    }
+}
