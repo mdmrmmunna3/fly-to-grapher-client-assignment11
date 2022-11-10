@@ -1,4 +1,5 @@
 import React, { useContext } from 'react';
+import { FaUser } from 'react-icons/fa';
 import { Link, Link as NavLink } from 'react-router-dom';
 import logo from '../../../assets/logo/photography.png';
 import { AuthContext } from '../../../Contexts/AuthProvider/AuthProvider';
@@ -21,16 +22,30 @@ const Navbar = () => {
             <NavLink to='/home'>Home</NavLink>
         </li>
 
-        <li className='font-semibold text-sky-500'><NavLink to='/'>Blog</NavLink></li>
+        <li className='font-semibold text-sky-500'><NavLink to='/blog'>Blog</NavLink></li>
         {
             user?.email ?
                 <>
-                    <li className='font-semibold text-sky-500'><NavLink to=''>My Review</NavLink></li>
-                    <li className='font-semibold text-sky-500'><NavLink to=''>Add Service</NavLink></li>
-                    <li className='font-semibold text-sky-500'><NavLink to=''>About Me</NavLink></li>
+                    <li className='font-semibold text-sky-500'><NavLink to='/review'>My Review</NavLink></li>
+                    <li className='font-semibold text-sky-500'><NavLink to='/addservice'>Add Service</NavLink></li>
                     <li className='font-semibold text-sky-500'>
                         <button onClick={handleLogOut} className='btn-ghost'>Log Out</button>
                     </li>
+                    <div className='flex items-center'>
+                        <>
+                            {
+                                user?.uid ?
+                                    <img
+                                        alt=""
+                                        src={user?.photoURL}
+                                        className="d-inline-block align-top rounded-full w-8 h-8" 
+                                        />
+                                    :
+                                    <FaUser className='text-white text-2xl'></FaUser>
+                            }
+                        </>
+
+                    </div>
                 </>
                 :
                 <>

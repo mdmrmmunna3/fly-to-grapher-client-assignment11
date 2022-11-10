@@ -2,8 +2,8 @@ import React from 'react';
 import { FaArrowRight } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 
-const ServicesAllCard = ({service}) => {
-    const {_id, img, name, description, price, discount } = service;
+const ServicesAllCard = ({ service }) => {
+    const { _id, img, name, description, price, discount } = service;
     return (
         <div>
             <div className="card w-full bg-base-100 shadow-xl">
@@ -20,7 +20,7 @@ const ServicesAllCard = ({service}) => {
                     </div>
                     <div className="px-2">
                         <Link to={`/serviceDetails/${_id}`}>
-                        <button className="btn btn-outline btn-primary border-0 text-white">View Details <FaArrowRight ></FaArrowRight></button>
+                            <button className="btn btn-outline btn-primary border-0 text-white">View Details <FaArrowRight ></FaArrowRight></button>
                         </Link>
                     </div>
                 </div>
