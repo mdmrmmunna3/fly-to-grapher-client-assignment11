@@ -5,7 +5,7 @@ import ServicesAllCard from './ServicesAllCard';
 const ServicesAll = () => {
     const [services, setServices] = useState([]);
     useEffect(() => {
-        fetch('http://localhost:5000/servicesAll')
+        fetch('https://fly-to-grapher-server-assignment11.vercel.app/servicesAll')
             .then(res => res.json())
             .then(data => setServices(data))
             .catch(err => console.error(err))

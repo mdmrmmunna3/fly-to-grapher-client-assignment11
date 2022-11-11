@@ -41,7 +41,7 @@ const router = createBrowserRouter([
         {
           path:'/serviceDetails/:id',
           element: <PrivateRoute><ServiceDetails></ServiceDetails></PrivateRoute>,
-          loader: ({params}) => fetch (`http://localhost:5000/servicesAll/${params.id}`) 
+          loader: ({params}) => fetch (`https://fly-to-grapher-server-assignment11.vercel.app/servicesAll/${params.id}`) 
         },
         {
           path:'/review',

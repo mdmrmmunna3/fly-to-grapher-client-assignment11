@@ -20,7 +20,7 @@ const AddService = () => {
             description
         }
         console.log(addNewService)
-        fetch('http://localhost:5000/servicesAll', {
+        fetch('https://fly-to-grapher-server-assignment11.vercel.app/servicesAll', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

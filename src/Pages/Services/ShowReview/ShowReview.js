@@ -7,7 +7,7 @@ const ShowReview = () => {
 
 
     useEffect(() => {
-        fetch(`http://localhost:5000/reviewAll`,)
+        fetch(`https://fly-to-grapher-server-assignment11.vercel.app/reviewAll`,)
             .then(res => res.json())
             .then(data => {
                 console.log(data)

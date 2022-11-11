@@ -1,0 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+
+.blog-title {
+    font-family: 'Lobster', cursive;
+    color: #287d8f;
+}
+
+.blog {
+    background-color: #001925;
+    color: rgb(233, 229, 229);
+}
+.blog-container img{
+    height: 200px;
+    width: 100%;
+}
+

@@ -9,7 +9,7 @@ const MyReview = () => {
     const [reviews, setReviews] = useState([]);
 
     useEffect(() => {
-        fetch(`http://localhost:5000/reviewAll?email=${user?.email}`,)
+        fetch(`https://fly-to-grapher-server-assignment11.vercel.app/reviewAll?email=${user?.email}`,)
 
             .then(res => res.json())
             .then(data => {
@@ -21,7 +21,7 @@ const MyReview = () => {
     }, [user?.email])
 
     const handleUpdateReview = id => {
-        fetch(`http://localhost:5000/reviewAll/${id}`, {
+        fetch(`https://fly-to-grapher-server-assignment11.vercel.app/reviewAll/${id}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'
@@ -42,7 +42,7 @@ const MyReview = () => {
     const handleDelete = id => {
         const proceed = window.confirm('Are you sure, you want to cancel this order');
         if (proceed) {
-            fetch(`http://localhost:5000/reviewAll/${id}`, {
+            fetch(`https://fly-to-grapher-server-assignment11.vercel.app/reviewAll/${id}`, {
                 method: 'DELETE',
 
             })

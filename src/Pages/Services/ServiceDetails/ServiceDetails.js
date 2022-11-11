@@ -28,7 +28,7 @@ const ServiceDetails = () => {
             serviceImg: img,
         }
 
-        fetch('http://localhost:5000/reviewAll', {
+        fetch('https://fly-to-grapher-server-assignment11.vercel.app/reviewAll', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',

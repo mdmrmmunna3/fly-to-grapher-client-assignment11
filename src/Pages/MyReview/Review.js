@@ -3,7 +3,7 @@ import { AuthContext } from '../../Contexts/AuthProvider/AuthProvider';
 
 const Review = ({ review, handleDelete,handleUpdateReview }) => {
     const { user } = useContext(AuthContext)
-    const { serviceImg, reviewMessage, price, _id, email } = review;
+    const { serviceImg, reviewMessage, price, _id } = review;
 
     return (
         <div>
