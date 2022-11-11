@@ -55,7 +55,7 @@ const AddService = () => {
                     <br />
                     <textarea name='description' className="textarea textarea-error m-1 w-3/4" placeholder="description" required></textarea>
                     <br />
-                    <button type='submit' className="btn btn-wide">Add New Service</button>
+                    <button type='submit' className="btn btn-wigde">Add New Service</button>
                 </form>
 
             </div>

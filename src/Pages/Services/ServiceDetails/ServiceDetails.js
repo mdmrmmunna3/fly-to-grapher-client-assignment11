@@ -1,5 +1,7 @@
 import React, { useContext } from 'react';
 import toast from 'react-hot-toast';
+import { PhotoProvider, PhotoView } from 'react-photo-view';
+
 import { useLoaderData } from 'react-router-dom';
 import { AuthContext } from '../../../Contexts/AuthProvider/AuthProvider';
 import ShowReview from '../ShowReview/ShowReview';
@@ -47,10 +49,16 @@ const ServiceDetails = () => {
     return (
 
         <div>
+
             <div className="card w-full bg-base-100 shadow-xl mb-4">
-                <figure className="px-4 pt-4">
-                    <img src={img} alt="" className="rounded-xl service-details-img transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110  duration-300" />
-                </figure>
+                <PhotoProvider>
+                    <PhotoView src={img}>
+                        <figure className="px-4 pt-4">
+                            <img src={img} alt="" className="rounded-xl service-details-img transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110  duration-300" />
+                        </figure>
+                    </PhotoView>
+                </PhotoProvider>
+
                 <div className="card-body ">
                     <h2 className="card-title">{name}</h2>
                     <p><span className='font-semibold text-slate-500-700'>Description</span>: {description}</p>

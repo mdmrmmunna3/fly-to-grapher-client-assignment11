@@ -5,7 +5,7 @@ import { AuthContext } from '../../Contexts/AuthProvider/AuthProvider';
 import Review from './Review';
 
 const MyReview = () => {
-    const { user, setLoader } = useContext(AuthContext);
+    const { user } = useContext(AuthContext);
     const [reviews, setReviews] = useState([]);
 
     useEffect(() => {
@@ -19,6 +19,24 @@ const MyReview = () => {
             .catch(err => console.error(err))
 
     }, [user?.email])
+
+    const handleUpdateReview = id => {
+        fetch(`http://localhost:5000/reviewAll/${id}`, {
+            method: 'PUT',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body:JSON.stringify({reviews})
+        })
+        .then(res => res.json())
+        .then(data => {
+            console.log(data)
+            if(data.modifiedCount > 0) {
+                toast.success('update successfully')
+                setReviews(data)
+            }
+        })
+    }
 
 
     const handleDelete = id => {
@@ -57,6 +75,7 @@ const MyReview = () => {
                         key={review._id}
                         review={review}
                         handleDelete={handleDelete}
+                        handleUpdateReview={handleUpdateReview}
                     ></Review>)
 
                 }

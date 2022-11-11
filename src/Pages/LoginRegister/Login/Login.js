@@ -28,7 +28,9 @@ const Login = () => {
                 navigate(from, { replace: true });
             })
             .catch(err => console.error(err))
-            
+            .finally(() => {
+                setLoader(false)
+            })
     }
 
     return (
