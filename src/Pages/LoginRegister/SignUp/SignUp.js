@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import logImg from '../../../assets/LoginRegister/signup_img.jpg'
 import { AuthContext } from '../../../Contexts/AuthProvider/AuthProvider';
 import SocalLogin from '../../SocalLogin/SocalLogin';
@@ -9,6 +9,7 @@ import { Helmet } from 'react-helmet-async';
 const SignUp = () => {
 
     const { createUser, updateUserProfile } = useContext(AuthContext);
+    const navigate = useNavigate();
 
     const handleSubmit = event => {
         event.preventDefault();
@@ -25,6 +26,7 @@ const SignUp = () => {
                 console.log(user);
                 form.reset();
                 handleUpdateUserProfile(name, photoURL);
+                navigate('/')
             })
             .catch(err => console.error(err));
     }
