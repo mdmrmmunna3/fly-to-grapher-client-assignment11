@@ -6,6 +6,7 @@ const Review = ({ review, handleDelete }) => {
     const { serviceImg, reviewMessage, price, _id, email } = review;
     return (
         <div>
+            
             <div className="rounded-md shadow-md sm:w-96 dark:bg-gray-900 dark:text-gray-100">
                 <div className="flex items-center justify-between p-3">
                     <div className="flex items-center space-x-2">

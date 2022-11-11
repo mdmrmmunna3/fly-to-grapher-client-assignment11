@@ -8,7 +8,7 @@ import './Login.css';
 
 const Login = () => {
 
-    const { userLogin } = useContext(AuthContext);
+    const { userLogin, setLoader } = useContext(AuthContext);
     const location = useLocation();
     const navigate = useNavigate();
 
@@ -27,7 +27,8 @@ const Login = () => {
                 console.log(user);
                 navigate(from, { replace: true });
             })
-            .catch(err => console.error(err));
+            .catch(err => console.error(err))
+            
     }
 
     return (

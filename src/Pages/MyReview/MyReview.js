@@ -4,17 +4,19 @@ import { AuthContext } from '../../Contexts/AuthProvider/AuthProvider';
 import Review from './Review';
 
 const MyReview = () => {
-    const { user } = useContext(AuthContext);
+    const { user, setLoader } = useContext(AuthContext);
     const [reviews, setReviews] = useState([]);
 
     useEffect(() => {
         fetch(`http://localhost:5000/reviewAll?email=${user?.email}`,)
+
             .then(res => res.json())
             .then(data => {
                 console.log(data)
                 setReviews(data)
             })
             .catch(err => console.error(err))
+
     }, [user?.email])
 
 
@@ -25,6 +27,7 @@ const MyReview = () => {
                 method: 'DELETE',
 
             })
+
                 .then(res => res.json())
                 .then(data => {
                     if (data.deletedCount > 0) {
@@ -42,7 +45,11 @@ const MyReview = () => {
             <Helmet>
                 <title>MyReview {`-- FlyTo-Grapher`}</title>
             </Helmet>
+            {
 
+                <> <h2 className='text-center text-3xl '>Review Length: {reviews.length}</h2></>
+
+            }
             <div className='mx-10 my-12 grid lg:grid-cols-3 md:grid-cols-2'>
                 {
                     reviews.map(review => <Review
@@ -50,8 +57,12 @@ const MyReview = () => {
                         review={review}
                         handleDelete={handleDelete}
                     ></Review>)
+
                 }
             </div>
+
+
+
         </div>
     );
 };

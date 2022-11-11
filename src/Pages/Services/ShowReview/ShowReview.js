@@ -7,14 +7,14 @@ const ShowReview = () => {
 
 
     useEffect(() => {
-        fetch(`http://localhost:5000/reviewAll?email=${user?.email}`,)
+        fetch(`http://localhost:5000/reviewAll?user=${user?._id}`,)
             .then(res => res.json())
             .then(data => {
                 console.log(data)
                 setReviews(data)
             })
             .catch(err => console.error(err))
-    }, [user?.email])
+    }, [user?._id])
     return (
         <div>
             <h2 className='text-gray-500 text-center text-3xl'>Review</h2>

@@ -20,8 +20,8 @@ const ServiceDetails = () => {
             price,
             email,
             reviewMessage,
-            name,
             userImg: user?.photoUrl,
+            userName: user?.displayName,
             serviceImg: img,
         }
 
@@ -71,7 +71,7 @@ const ServiceDetails = () => {
                 <h2 className='text-center text-4xl mb-4 text-white'>Review</h2>
                 <form onSubmit={handleReview}>
                     <div className='md:flex justify-around sm:text-center '>
-                        <input type="text" placeholder="name" className="input input-bordered input-primary w-full max-w-xs" defaultValue={user?.displayName} />
+                        <input type="text" placeholder="username" className="input input-bordered input-primary w-full max-w-xs" defaultValue={user?.displayName} />
                         <input type="text" placeholder="name" className="input input-bordered input-primary w-full max-w-xs" defaultValue={name} />
                         <input type="email" placeholder="email" className="input input-bordered input-primary w-full max-w-xs" defaultValue={user?.email} readOnly />
                     </div>
