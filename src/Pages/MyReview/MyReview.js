@@ -20,22 +20,22 @@ const MyReview = () => {
 
     }, [user?.email])
 
-    const handleUpdateReview = id => {
-        fetch(`https://fly-to-grapher-server-assignment11.vercel.app/reviewAll/${id}`, {
-            method: 'PUT',
-            headers: {
-                'content-type': 'application/json'
-            },
-            body:JSON.stringify({reviews})
-        })
-        .then(res => res.json())
-        .then(data => {
-            console.log(data)
-            if(data.modifiedCount > 0) {
-                toast.success('update successfully')
-                setReviews(data)
-            }
-        })
+    const handleUpdateReview = () => {
+        // fetch(`https://fly-to-grapher-server-assignment11.vercel.app/reviewAll/${id}`, {
+        //     method: 'PUT',
+        //     headers: {
+        //         'content-type': 'application/json'
+        //     },
+        //     body:JSON.stringify({reviews})
+        // })
+        // .then(res => res.json())
+        // .then(data => {
+        //     console.log(data)
+        //     if(data.modifiedCount > 0) {
+        //         toast.success('update successfully')
+        //         setReviews(data)
+        //     }
+        // })
     }
 
 

@@ -37,7 +37,7 @@ const Review = ({ review, handleDelete,handleUpdateReview }) => {
                                 <h3 className="font-bold text-lg text-center mb-3">Update Review</h3>
                                 <textarea className="textarea textarea-primary w-full" placeholder='update review'></textarea>
                                 <div className="modal-action">
-                                    <label onClick={()=> handleUpdateReview(_id)} htmlFor="my-modal-6" className="btn">Submit</label>
+                                    <label onClick={handleUpdateReview} htmlFor="my-modal-6" className="btn">Submit</label>
                                 </div>
                             </div>
                         </div>
