@@ -93,6 +93,7 @@ const SignUp = () => {
                     </form>
                 </div>
             </div>
+            <img src="https://cdn.dribbble.com/users/1172503/screenshots/4505740/media/d45f2014e49844aec6c56e5a7267948e.gif" alt="" />
         </div>
     );
 };

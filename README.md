@@ -8,6 +8,14 @@ In the project directory, you can run:
 
 ### `npm start`
 
+### project description: 
+* this project is backend database 
+* this project like a indivlual people personal review service site .
+* some react tailwind component use in this project 
+* my project like a photographer . this photograph his profesonal life many photoshot on any way as like a wlid photograhy, wedding photography, sport photograhy ....
+* this project protect private route .
+* this project responsive 
+* when user login then user see my review,add service route details other before login / signup after see all review and add service.
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
