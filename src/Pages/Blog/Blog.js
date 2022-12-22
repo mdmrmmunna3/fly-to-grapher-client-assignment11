@@ -14,7 +14,7 @@ const Blog = () => {
             </Helmet>
             <h2 className="text-3xl font-bold font-serif text-center py-4 blog-title">Some Essainail Blog</h2>
         
-            <div className='grid xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-4 mx-10 py-4 blog-container'>
+            <div className='grid xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-4 mx-7 py-4 blog-container'>
                 <div>
                     <img src={blog1} alt="" />
                     <h1 className='text-purple-500 text-xl font-semibold my-2'>Difference between SQL and NoSQL</h1>

@@ -5,7 +5,7 @@ import { AuthContext } from '../../Contexts/AuthProvider/AuthProvider';
 import Review from './Review';
 
 const MyReview = () => {
-    const { user } = useContext(AuthContext);
+    const { user, setLoader } = useContext(AuthContext);
     const [reviews, setReviews] = useState([]);
 
     useEffect(() => {
@@ -69,7 +69,8 @@ const MyReview = () => {
                 <> <h2 className='text-center text-3xl '>Review Length: {reviews.length}</h2></>
 
             }
-            <div className='mx-10 my-12 grid lg:grid-cols-3 md:grid-cols-2'>
+            {
+                setLoader && <div className='mx-10 my-12 grid lg:grid-cols-3 md:grid-cols-2'>
                 {
                     reviews.map(review => <Review
                         key={review._id}
@@ -80,6 +81,7 @@ const MyReview = () => {
 
                 }
             </div>
+            }
 
 
 

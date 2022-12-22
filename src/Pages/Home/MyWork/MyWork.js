@@ -12,7 +12,7 @@ import newsImg8 from '../../../assets/Mywork-Imges/work-img8.png';
 import newsImg9 from '../../../assets/Mywork-Imges/work-img9.png';
 const MyWork = () => {
     return (
-        <div className='pb-12'>
+        <div className='pb-12 mx-6 lg:mx-7'>
             <div className='work-title'>
                 <h1 className='text-white text-5xl text-center mt-10 mb-8 hover:text-slate-400'>My Work</h1>
             </div>

@@ -50,7 +50,7 @@ const SignUp = () => {
             <div className=" main-div my-4">
                 <div className="hero-content flex-col lg:flex-row">
 
-                    <img className='w-3/5' src={logImg} alt="" />
+                    <img className='lg:w-3/5' src={logImg} alt="" />
 
                     <form onSubmit={handleSubmit} className="card flex-shrink-0 w-full max-w-sm shadow-2xl form-div">
                         <h1 className="text-5xl font-bold text-center text-white mt-4">Sign Up</h1>
@@ -93,7 +93,7 @@ const SignUp = () => {
                     </form>
                 </div>
             </div>
-            <img src="https://cdn.dribbble.com/users/1172503/screenshots/4505740/media/d45f2014e49844aec6c56e5a7267948e.gif" alt="" />
+    
         </div>
     );
 };

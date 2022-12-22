@@ -53,7 +53,7 @@ const AddService = () => {
                     <input name='price' type="number" placeholder="Price" className="m-1 input input-bordered input-info w-full max-w-xs" required />
                     <input name='discount' type="number" placeholder="discount" className="m-1 input input-bordered input-info w-full max-w-xs" required />
                     <br />
-                    <textarea name='description' className="textarea textarea-error m-1 w-3/4" placeholder="description" required></textarea>
+                    <textarea name='description' className="textarea textarea-error m-1 w-full lg:w-3/4" placeholder="description" required></textarea>
                     <br />
                     <button type='submit' className="btn btn-wigde">Add New Service</button>
                 </form>

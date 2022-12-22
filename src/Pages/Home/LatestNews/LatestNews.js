@@ -3,7 +3,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/effect-coverflow";
 import "swiper/css/pagination";
-import { EffectCoverflow, Pagination } from "swiper";
+import { EffectCoverflow, Pagination, Autoplay } from "swiper";
 import imge1 from '../../../assets/latestImg/news1.png';
 import imge2 from '../../../assets/latestImg/news2.png';
 import imge3 from '../../../assets/latestImg/news3.png';
@@ -13,7 +13,7 @@ import './LatestNews.css';
 
 const LatestNews = () => {
     return (
-        <div className='my-16 text-center'>
+        <div className='lg:my-16 mb-4 text-center'>
             <div className='news-title'>
                 <h1 className='text-2xl md:text-3xl lg:text-5xl mb-4 text-white'>Latest News</h1>
                 <h3 className='text-white'>Latest Update for  Sport </h3>
@@ -23,6 +23,10 @@ const LatestNews = () => {
                     effect={"coverflow"}
                     grabCursor={true}
                     centeredSlides={true}
+                    autoplay={{
+                        delay: 2000,
+                        disableOnInteraction: false,
+                    }}
                     slidesPerView={"auto"}
                     coverflowEffect={{
                         rotate: 50,
@@ -32,7 +36,7 @@ const LatestNews = () => {
                         slideShadows: true,
                     }}
                     pagination={true}
-                    modules={[EffectCoverflow, Pagination]}
+                    modules={[EffectCoverflow, Pagination, Autoplay]}
                     className="mySwiper "
                 >
                     <SwiperSlide className=''>
