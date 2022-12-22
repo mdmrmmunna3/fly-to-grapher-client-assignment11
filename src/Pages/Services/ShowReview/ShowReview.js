@@ -21,7 +21,7 @@ const ShowReview = () => {
             {
                 reviews.length <= 0 ? <h2 className='text-center py-4 text-3xl'>No Review Found</h2> : <h2 className='text-gray-500 text-center text-3xl py-4'>ReviewAll</h2>
             }
-            <div className=' grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-3'>
+            <div className=' grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-1'>
 
                 {
 
