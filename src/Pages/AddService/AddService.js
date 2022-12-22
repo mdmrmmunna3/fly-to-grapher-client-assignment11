@@ -39,12 +39,12 @@ const AddService = () => {
             .catch(error => console.error(error))
     }
     return (
-        <div>
+        <div className='lg:py-24'>
             <Helmet>
                 <title>AddService {`-- FlyTo-Grapher`}</title>
             </Helmet>
 
-            <div className='w-3/4 mx-auto p-5 bg-sky-400 m-10 rounded-lg text-center'>
+            <div className='w-3/4 mx-auto lg:p-10 p-5 bg-sky-400 rounded-lg my-10 text-center'>
                 <form onSubmit={addService} >
                     <h1 className='text-3xl work-title'>Add Service</h1>
                     <input name='name' type="text" placeholder="service-name" className="input input-bordered input-info w-full max-w-xs" required />

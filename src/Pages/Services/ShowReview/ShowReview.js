@@ -1,8 +1,9 @@
-import React, { useContext, useEffect, useState } from 'react';
-import { AuthContext } from '../../../Contexts/AuthProvider/AuthProvider';
+import React, { useEffect, useState } from 'react';
+
+import ShowReviewDetails from './ShowReviewDetails';
 
 const ShowReview = () => {
-    const { user } = useContext(AuthContext);
+
     const [reviews, setReviews] = useState([]);
 
 
@@ -17,31 +18,18 @@ const ShowReview = () => {
     }, [])
     return (
         <div>
-            <h2 className='text-gray-500 text-center text-3xl'>Review</h2>
-            <div className='bg-gray-300 grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1'>
+            {
+                reviews.length <= 0 ? <h2 className='text-center py-4 text-3xl'>No Review Found</h2> : <h2 className='text-gray-500 text-center text-3xl py-4'>ReviewAll</h2>
+            }
+            <div className=' grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-3'>
+
                 {
-                    reviews.map(review => <div key={review?._id}>
-                        <div className="rounded-md shadow-md  dark:bg-gray-900 dark:text-gray-100 ml-2">
-                            <div className="flex items-center justify-between p-3">
-                                <div className="flex items-center space-x-2">
-                                    <img src={user?.photoURL} alt="" className="object-cover object-center w-8 h-8 rounded-full shadow-sm dark:bg-gray-500 dark:border-gray-700" />
-                                    <div className="-space-y-1">
-                                        <h2 className="text-sm font-semibold leading-none">{user?.displayName}</h2>
-                                    </div>
-                                </div>
 
-                            </div>
-                            <img src={review?.serviceImg} alt="" className="object-cover object-center  dark:bg-gray-500 h-48 w-full" />
-                            <div className="p-3">
-                                <div className="flex items-center justify-between">
-                                    <p>Message:{review?.reviewMessage}</p>
-                                </div>
-                                <p className='text-primary my-2'>price: ${review?.price}</p>
-
-                            </div>
-                        </div>
-                    </div>)
+                    reviews.map(review =>
+                        <ShowReviewDetails key={review._id} review={review}></ShowReviewDetails>
+                    )
                 }
+
             </div>
         </div>
     );

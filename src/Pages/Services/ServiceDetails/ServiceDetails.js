@@ -9,7 +9,7 @@ import './ServiceDetails.css';
 
 const ServiceDetails = () => {
     const { _id, img, name, description, price, discount } = useLoaderData();
-    const { user } = useContext(AuthContext);
+    const { user, setLoader } = useContext(AuthContext);
     const handleReview = event => {
         event.preventDefault();
         const form = event.target;
@@ -23,7 +23,7 @@ const ServiceDetails = () => {
             price,
             email,
             reviewMessage,
-            userImg: user?.photoUrl,
+            userImg: user?.photoURL,
             userName: user?.displayName,
             serviceImg: img,
         }
@@ -48,46 +48,50 @@ const ServiceDetails = () => {
 
     return (
 
-        <div>
+        <section>
+            {
+                setLoader && <div>
 
-            <div className="card w-full bg-base-100 shadow-xl mb-4">
-                <PhotoProvider>
-                    <PhotoView src={img}>
-                        <figure className="px-4 pt-4">
-                            <img src={img} alt="" className="rounded-xl service-details-img transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110  duration-300" />
-                        </figure>
-                    </PhotoView>
-                </PhotoProvider>
+                    <div className="card w-full bg-base-100 shadow-xl mb-4">
+                        <PhotoProvider>
+                            <PhotoView src={img}>
+                                <figure className="px-4 pt-4">
+                                    <img src={img} alt="" className="rounded-xl service-details-img transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110  duration-300" />
+                                </figure>
+                            </PhotoView>
+                        </PhotoProvider>
 
-                <div className="card-body ">
-                    <h2 className="card-title">{name}</h2>
-                    <p><span className='font-semibold text-slate-500-700'>Description</span>: {description}</p>
+                        <div className="card-body ">
+                            <h2 className="card-title">{name}</h2>
+                            <p><span className='font-semibold text-slate-500-700'>Description</span>: {description}</p>
 
-                    <div className='flex justify-between'>
-                        <p className='text-green-400 font-bold'>Price: ${price}</p>
-                        <p className='text-orange-400 font-bold'>Discount: {discount}%</p>
+                            <div className='flex justify-between'>
+                                <p className='text-green-400 font-bold'>Price: ${price}</p>
+                                <p className='text-orange-400 font-bold'>Discount: {discount}%</p>
+                            </div>
+
+                        </div>
                     </div>
 
+                    {/* show review  */}
+                    <ShowReview img={img}></ShowReview>
+
+                    {/* review submit part  */}
+                    <div className='lg:m-10 m-4 p-6 bg-slate-400 rounded-lg'>
+                        <h2 className='text-center text-4xl mb-4 text-white'>Review</h2>
+                        <form onSubmit={handleReview}>
+                            <div className='md:flex justify-around sm:text-center '>
+                                <input type="text" placeholder="username" className="input input-bordered input-primary w-full max-w-xs mb-2" defaultValue={user?.displayName} />
+                                <input type="text" placeholder="name" className="input input-bordered input-primary w-full max-w-xs mb-2" defaultValue={name} />
+                                <input type="email" placeholder="email" className="input input-bordered input-primary w-full max-w-xs " defaultValue={user?.email} disabled />
+                            </div>
+                            <textarea name='reviewMessage' className="textarea textarea-primary mt-3 w-full " placeholder="review" required></textarea>
+                            <button className="btn btn-primary my-3 ">Submit Review</button>
+                        </form>
+                    </div>
                 </div>
-            </div>
-
-            {/* show review  */}
-            <ShowReview></ShowReview>
-
-            {/* review submit part  */}
-            <div className='my-10 mx-10 bg-slate-400 rounded-lg'>
-                <h2 className='text-center text-4xl mb-4 text-white'>Review</h2>
-                <form onSubmit={handleReview}>
-                    <div className='md:flex justify-around sm:text-center '>
-                        <input type="text" placeholder="username" className="input input-bordered input-primary w-full max-w-xs" defaultValue={user?.displayName} />
-                        <input type="text" placeholder="name" className="input input-bordered input-primary w-full max-w-xs" defaultValue={name} />
-                        <input type="email" placeholder="email" className="input input-bordered input-primary w-full max-w-xs" defaultValue={user?.email} readOnly />
-                    </div>
-                    <textarea name='reviewMessage' className="textarea textarea-primary mt-3 w-full" placeholder="review"></textarea>
-                    <button className="btn btn-primary my-3">Submit Review</button>
-                </form>
-            </div>
-        </div>
+            }
+        </section>
     );
 };
 

@@ -10,14 +10,14 @@ import 'react-photo-view/dist/react-photo-view.css';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <React.StrictMode>
+  // <React.StrictMode>
     <HelmetProvider>
       <AuthProvider>
         <App />
       </AuthProvider>
     </HelmetProvider>
    
-  </React.StrictMode>
+  // </React.StrictMode>
 );
 
 // If you want to start measuring performance in your app, pass a function

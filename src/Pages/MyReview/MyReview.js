@@ -20,13 +20,20 @@ const MyReview = () => {
 
     }, [user?.email])
 
-    const handleUpdateReview = () => {
-        // fetch(`https://fly-to-grapher-server-assignment11.vercel.app/reviewAll/${id}`, {
+    const handleUpdateReview = id => {
+        // fetch(`https://fly-to-grapher-server-assignment11.vercel.app/reviewAll/${_id}`, {
         //     method: 'PUT',
         //     headers: {
         //         'content-type': 'application/json'
         //     },
-        //     body:JSON.stringify({reviews})
+        //     body: JSON.stringify(reviews)
+        // })
+        // fetch(`http://localhost:5000/reviewAll/${id}`, {
+        //     method: 'PATCH',
+        //     headers: {
+        //         'content-type': 'application/json'
+        //     },
+        //     body: JSON.stringify(reviews)
         // })
         // .then(res => res.json())
         // .then(data => {
@@ -70,7 +77,7 @@ const MyReview = () => {
 
             }
             {
-                setLoader && <div className='mx-10 my-12 grid lg:grid-cols-3 md:grid-cols-2'>
+                setLoader && <div className='mx-10 my-12 grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-6'>
                 {
                     reviews.map(review => <Review
                         key={review._id}

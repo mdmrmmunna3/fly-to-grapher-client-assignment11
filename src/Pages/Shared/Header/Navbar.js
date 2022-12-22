@@ -53,6 +53,7 @@ const Navbar = () => {
                     <li className='font-semibold text-sky-500'><NavLink to='/signup'>Sign Up</NavLink></li>
                 </>
         }
+        
     </>
     return (
         <div  data-theme="cupcake" className="navbar nav-menu sticky top-0 z-10 w-full py-3">
