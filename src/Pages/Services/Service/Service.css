@@ -1,16 +1,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
 
-.service-title, .card-title {
+.service-title,
+.card-title {
     font-family: 'Lobster', cursive;
 }
 
 .service-img {
     width: 100%;
-    height: 400px;
+    height: 280px;
 }
 
-@media only screen and (max-width: 576px) {
+/* @media only screen and (max-width: 576px) {
     .service-img {
         height: 300px;
     }
-}
+} */
