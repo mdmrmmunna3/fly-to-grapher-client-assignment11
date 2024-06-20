@@ -14,7 +14,7 @@ const ServicesAll = () => {
             .catch(err => console.error(err))
     }, [])
     return (
-        <div className='my-6'>
+        <div className='my-24'>
             {
                 setLoader && <><h1 className='text-5xl text-black service-title text-center my-6 hover:text-slate-400'>My Service</h1>
                     <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 lg:mx-14 md:mx-6 mx-2'>

@@ -38,8 +38,8 @@ const Navbar = () => {
                                     <img
                                         alt=""
                                         src={user?.photoURL}
-                                        className="d-inline-block align-top rounded-full w-8 h-8" 
-                                        />
+                                        className="d-inline-block align-top rounded-full w-8 h-8"
+                                    />
                                     :
                                     <FaUser className='text-white text-2xl'></FaUser>
                             }
@@ -53,10 +53,10 @@ const Navbar = () => {
                     <li className='font-semibold text-sky-500'><NavLink to='/signup'>Sign Up</NavLink></li>
                 </>
         }
-        
+
     </>
     return (
-        <div  data-theme="cupcake" className="navbar nav-menu sticky top-0 z-10 w-full py-3">
+        <div data-theme="cupcake" className="navbar  nav-menu fixed top-0 z-10 w-full py-3">
             <div className="lg:navbar-start">
                 <div className="dropdown">
                     <label tabIndex={0} className="btn btn-white lg:hidden">
@@ -75,7 +75,7 @@ const Navbar = () => {
                     </div>
                 </Link>
             </div>
-            
+
             <div className="navbar-end hidden lg:flex">
                 <ul className="menu menu-horizontal p-0">
                     {menuItems}

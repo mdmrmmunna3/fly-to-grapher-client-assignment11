@@ -73,7 +73,7 @@ const ShowReviewDetails = ({ review }) => {
                             <div className="flex items-center justify-between">
                                 <p><span className='font-semibold'>Message: </span>{review?.reviewMessage.slice(0, 50)}... </p>
                             </div>
-                            <p className='text-primary my-2'><span className='font-medium'>price</span>: ${review?.price}</p>
+                            <p className='text-green-600 my-2'><span className='font-medium'>price</span>: ${review?.price}</p>
                         </div>
                     </div>
                 </div>

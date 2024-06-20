@@ -8,7 +8,7 @@ import blog4 from '../../assets/BlogImg/blog4.png';
 
 const Blog = () => {
     return (
-        <div className='blog'>
+        <div className='blog pt-20'>
             <Helmet>
                 <title>Blog {`-- FlyTo-Grapher`}</title>
             </Helmet>

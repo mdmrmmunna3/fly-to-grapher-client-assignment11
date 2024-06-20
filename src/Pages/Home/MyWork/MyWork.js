@@ -1,7 +1,7 @@
 import React from 'react';
 import './MyWork.css';
 
-import newsImg1 from '../../../assets/Mywork-Imges/work-img1.png';
+import newsImg1 from '../../../assets/Mywork-Imges/work-img1.jpg';
 import newsImg2 from '../../../assets/Mywork-Imges/work-img2.png';
 import newsImg3 from '../../../assets/Mywork-Imges/work-img3.png';
 import newsImg4 from '../../../assets/Mywork-Imges/work-img4.png';

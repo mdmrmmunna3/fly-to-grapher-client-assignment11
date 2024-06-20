@@ -13,41 +13,46 @@ const MyReview = () => {
 
             .then(res => res.json())
             .then(data => {
-                console.log(data)
+                // console.log(data)
                 setReviews(data)
             })
             .catch(err => console.error(err))
 
     }, [user?.email])
 
-    const handleUpdateReview = id => {
-        // fetch(`https://fly-to-grapher-server-assignment11.vercel.app/reviewAll/${_id}`, {
-        //     method: 'PUT',
-        //     headers: {
-        //         'content-type': 'application/json'
-        //     },
-        //     body: JSON.stringify(reviews)
-        // })
-        // fetch(`http://localhost:5000/reviewAll/${id}`, {
-        //     method: 'PATCH',
-        //     headers: {
-        //         'content-type': 'application/json'
-        //     },
-        //     body: JSON.stringify(reviews)
-        // })
-        // .then(res => res.json())
-        // .then(data => {
-        //     console.log(data)
-        //     if(data.modifiedCount > 0) {
-        //         toast.success('update successfully')
-        //         setReviews(data)
-        //     }
-        // })
-    }
+    // const handleUpdateReview = id => {
+    // fetch(`https://fly-to-grapher-server-assignment11.vercel.app/reviewAll/${id}`, {
+    //     method: 'PUT',
+    //     headers: {
+    //         'content-type': 'application/json'
+    //     },
+    //     body: JSON.stringify(reviews)
+    // })
+
+    // fetch(`http://localhost:5000/reviewAll/${id}`, {
+    //     method: 'PATCH',
+    //     headers: {
+    //         'content-type': 'application/json'
+    //     },
+    //     body: JSON.stringify(reviews)
+    // })
+    //     .then(res => res.json())
+    //     .then(data => {
+    //         console.log(data)
+    //         if (data.modifiedCount > 0) {
+    //             toast.success('update successfully')
+    //             setReviews(data)
+    //         }
+    //     })
+    //     .catch(error => {
+    //         console.error('Error updating review:', error);
+    //         toast.error('Failed to update review');
+    //     });
+    // }
 
 
     const handleDelete = id => {
-        const proceed = window.confirm('Are you sure, you want to cancel this order');
+        const proceed = window.confirm('Are you sure, you want to delete this review?');
         if (proceed) {
             fetch(`https://fly-to-grapher-server-assignment11.vercel.app/reviewAll/${id}`, {
                 method: 'DELETE',
@@ -73,21 +78,21 @@ const MyReview = () => {
             </Helmet>
             {
 
-                <> <h2 className='text-center text-3xl '>Review Length: {reviews.length}</h2></>
+                <> <h2 className='text-center text-3xl mt-20'>Review Length: {reviews.length}</h2></>
 
             }
             {
-                setLoader && <div className='mx-10 my-12 grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-6'>
-                {
-                    reviews.map(review => <Review
-                        key={review._id}
-                        review={review}
-                        handleDelete={handleDelete}
-                        handleUpdateReview={handleUpdateReview}
-                    ></Review>)
+                setLoader && <div className='lg:mx-10 md:mx-6 mx-2 my-12 grid lg:grid-cols-2  gap-6'>
+                    {
+                        reviews.map(review => <Review
+                            key={review._id}
+                            review={review}
+                            handleDelete={handleDelete}
+                        // handleUpdateReview={handleUpdateReview}
+                        ></Review>)
 
-                }
-            </div>
+                    }
+                </div>
             }
 
 
