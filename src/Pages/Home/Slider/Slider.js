@@ -12,7 +12,6 @@ const Slider = () => {
 
         {
             image: img1,
-
             prev: 4,
             id: 1,
             next: 2,

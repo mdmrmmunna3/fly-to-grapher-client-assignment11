@@ -15,7 +15,7 @@ const Review = ({ review, handleDelete }) => {
     const navigate = useNavigate();
 
     const handleUpdateReview = () => {
-        fetch(`http://localhost:5000/reviewAll/${_id}`, {
+        fetch(`https://fly-to-grapher-server-assignment11.vercel.app/reviewAll/${_id}`, {
             method: 'PATCH',
             headers: {
                 'content-type': 'application/json'
